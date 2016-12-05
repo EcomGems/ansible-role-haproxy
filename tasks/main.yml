@@ -29,7 +29,9 @@
   copy:
     src: "{{ haproxy_ssl_pem }}"
     dest: /etc/haproxy/server.pem
-    mode: 0644
+    mode: 0640
+    owner: haproxy_user
+    group: haproxy_group
   notify: restart haproxy
   when: haproxy_ssl_pem != ''
 
