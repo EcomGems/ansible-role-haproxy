@@ -49,6 +49,23 @@ HAProxy backend configuration directives.
 
 A list of backend servers (name and address) to which HAProxy will distribute requests.
 
+    haproxy_frontend_ssl_port: 443
+
+The port on which to listen for SSL based traffic.
+
+    haproxy_ssl_pem: '/path/to/pem/file'
+
+The full path to the PEM (key + cert) file to use for SSL termination.
+
+    haproxy_backend_hash_type: 'map-based'
+
+The backend hashing strategy to use.  See [HAProxy hash-type](http://cbonte.github.io/haproxy-dconv/1.7/configuration.html#4.2-hash-type)
+
+    haproxy_backend_group: false
+    haproxy_backend_group_port: 9000
+
+A list of grouped backend servers and destination ports to forward traffic to.  This can be used in addition to or in lieu of haproxy_backend_servers.
+
 ## Dependencies
 
 None.
